@@ -1,0 +1,5 @@
+class Accion < ActiveRecord::Base
+
+  belongs_to :tarea
+
+end

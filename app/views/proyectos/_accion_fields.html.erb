@@ -1,0 +1,15 @@
+<fieldset>
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-3">
+      <%= f.label :accion %>
+      <%= f.text_field :accion, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-1">
+      <%= f.hidden_field :_destroy %>
+      &nbsp;
+      <%= link_to "Eliminar", "#", class: "remove_fields btn btn-xs btn-danger" %>
+    </div>
+  </div>
+</fieldset>

@@ -1,0 +1,37 @@
+<%= form_for @proyecto do |p| %>
+  <%= render 'shared/error_message', model: @proyecto %>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <%= p.label :nombre %>
+      <%= p.text_field :nombre, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-9">
+      <%= p.label :descripcion %>
+      <%= p.text_field :descripcion, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="panel-heading">
+    <h3>Tareas</h3>
+  </div>
+
+  <%= p.fields_for :tareas, @proyecto.tareas.empty? ? @proyecto.tareas.build : @proyecto.tareas do |t| %>
+    <%= render 'tarea_fields', f: t %>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%= link_to_add_fields "Agregar Tarea", p, :tareas %>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= p.submit 'Guardar', class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>

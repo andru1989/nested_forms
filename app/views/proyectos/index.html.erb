@@ -1,0 +1,20 @@
+<div class="page-header">
+  <h1>Listado de Proyectos</h1>
+</div>
+
+<table class="table table-striped table-condensed table-bordered">
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Opciones</th>
+  </tr>
+  <% @proyectos.each do |proyecto| %>
+    <tr>
+      <td><%= proyecto.nombre %></td>
+      <td><%= proyecto.descripcion %></td>
+      <td><%= link_to 'Editar', edit_proyecto_path(proyecto), class: 'btn btn-default btn-xs' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Nuevo Proyecto', new_proyecto_path, class: 'btn btn-default' %>

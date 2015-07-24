@@ -1,0 +1,33 @@
+<fieldset>
+  <div class="row">
+    <div class="col-xs-3">
+      <%= f.label :descripcion %>
+      <%= f.text_field :descripcion, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-3">
+      <%= f.label :estudiante %>
+      <%= f.text_field :estudiante, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-1">
+      <%= f.hidden_field :_destroy %>
+      &nbsp;
+      <%= link_to "Eliminar", "#", class: "remove_fields btn btn-xs btn-danger" %>
+    </div>
+
+  </div>
+
+  <!-- ACCIONES -->
+  <%= f.fields_for :acciones do |t| %>
+    <%= render 'accion_fields', f: t %>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%= link_to_add_fields "Agregar Accion", f, :acciones %>
+    </div>
+  </div>
+
+  <!-- ACCIONES -->
+</fieldset>
