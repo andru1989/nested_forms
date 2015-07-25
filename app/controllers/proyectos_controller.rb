@@ -42,8 +42,8 @@ class ProyectosController < ApplicationController
   private
   def proyecto_params
     params.require(:proyecto).permit(:nombre, :descripcion,
-                                    tareas_attributes: [:id, :descripcion, :estudiante,
-                                      acciones_attributes: [:id, :accion]])
+                                    tareas_attributes: [:id, :descripcion, :estudiante, :_destroy,
+                                      acciones_attributes: [:id, :accion, :_destroy]])
   end
 
   def set_proyecto
